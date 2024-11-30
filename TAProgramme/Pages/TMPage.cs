@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using TAProgramme.Utilities;
 
 namespace TAProgramme.Pages
 {
@@ -45,8 +46,7 @@ namespace TAProgramme.Pages
 
             IWebElement priceTextBox = driver.FindElement(By.Id("Price"));
             priceTextBox.SendKeys("$12");
-
-            Thread.Sleep(3000);
+            Wait.WaitToBeClickable(driver, "Id", "SaveButton",3);
             //click on the save button
             IWebElement saveButton = driver.FindElement(By.Id("SaveButton"));
             saveButton.Click();

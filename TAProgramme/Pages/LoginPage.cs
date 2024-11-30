@@ -20,12 +20,16 @@ namespace TAProgramme.Pages
             //identify username text box and enter valid username
             IWebElement usernameTextbox = driver.FindElement(By.Id("UserName"));
             usernameTextbox.SendKeys("hari");
+
+
             //identify password textbox and enter valid password
             IWebElement passwordTextbox = driver.FindElement(By.Id("Password"));
             passwordTextbox.SendKeys("123123");
             //identify log in button and click on it
             IWebElement loginButton = driver.FindElement(By.XPath("//*[@id=\"loginForm\"]/form/div[3]/input[1]"));
             loginButton.Click();
+
+
             //check if user has logged in successfully-test is the last one.Above is the steps for the test
             IWebElement helloHari = driver.FindElement(By.XPath("//*[@id=\"logoutForm\"]/ul/li/a"));
           /*  if (helloHari.Text == "Hello hari!")
